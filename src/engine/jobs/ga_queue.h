@@ -1,5 +1,4 @@
 #pragma once
-
 /*
 ** RPI Game Architecture Engine
 **
@@ -23,4 +22,6 @@ public:
 	bool pop(void** data);
 
 	int get_count() const;
+private:
+	static void* _impl;
 };
