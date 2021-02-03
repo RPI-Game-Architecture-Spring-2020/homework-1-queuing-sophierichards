@@ -36,12 +36,16 @@ ga_queue::~ga_queue()
 {
 	// TODO:
 	// Free any resources held by the queue.
+	while (head != NULL) {
+		node* new_head = head->next_ptr;
+		delete(head);
+		head = new_head;
+	}
 	// See https://www.research.ibm.com/people/m/michael/podc-1996.pdf
 }
 
 void ga_queue::push(void* data)
 {
-
 	node* new_node = new node();
 	new_node->value = data;
 	new_node->next_ptr = NULL;
